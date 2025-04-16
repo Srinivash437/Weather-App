@@ -1,0 +1,271 @@
+/* ============================
+   GLOBAL STYLES
+============================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+/* ============================
+     CARD CONTAINER
+  ============================ */
+.card {
+  width: 100%;
+  max-width: 480px;
+  background: linear-gradient(135deg, #00c6ff, #0072ff); /* Blue gradient */
+  border-radius: 20px;
+  color: white;
+  padding: 40px 35px 60px;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease;
+}
+
+/* ============================
+     SEARCH SECTION
+  ============================ */
+.search {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.search input {
+  flex: 1;
+  padding: 14px 20px;
+  border-radius: 30px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  background: #ebf1fc;
+  color: #333;
+}
+
+.search button {
+  background: #ebf1fc;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.search button img {
+  width: 20px;
+}
+
+/* ============================
+     WEATHER DISPLAY
+  ============================ */
+.weatherIcon {
+  width: 180px;
+  margin: 10px auto;
+}
+
+.weather h1 {
+  font-size: 52px;
+  font-weight: 600;
+  margin: 10px 0;
+}
+
+.weather h2 {
+  font-size: 30px;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+/* ============================
+     WEATHER DETAILS (Humidity / Wind)
+  ============================ */
+.details {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 30px;
+  gap: 20px;
+}
+
+.col {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-align: left;
+  flex: 1 1 45%;
+  justify-content: center;
+}
+
+.col img {
+  width: 40px;
+}
+
+.humidity,
+.wind {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.small-icon {
+  width: 25px;
+  height: auto;
+  margin-right: 5px;
+}
+
+.details .col img {
+  width: 25px;
+}
+
+.hour-card .forecast-col img {
+  width: 25px;
+}
+
+/* ============================
+     UNIT TOGGLE BUTTON
+  ============================ */
+.toggle-container {
+  margin-top: 20px;
+}
+
+#unitToggle {
+  background: #ebf1fc;
+  color: #333;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+/* ============================
+     HOURLY FORECAST STYLES
+  ============================ */
+.hourly-forecast {
+  margin-top: 30px;
+  display: flex;
+  overflow-x: auto;
+  gap: 15px;
+  padding: 10px 0;
+}
+
+.hourly-card {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 10px;
+  min-width: 80px;
+  text-align: center;
+  flex: 0 0 auto;
+  color: #fff;
+}
+
+.hourly-card img {
+  width: 40px;
+}
+
+/* ============================
+     ERROR MESSAGE
+  ============================ */
+.error {
+  display: none;
+  text-align: left;
+  font-size: 14px;
+  color: #ff6b6b;
+  padding-left: 10px;
+  margin-top: -15px;
+}
+
+/* ============================
+     RESPONSIVE STYLES (MOBILE)
+  ============================ */
+@media (max-width: 540px) {
+  html,
+  body {
+    width: 100%;
+    height: auto;
+    padding: 0;
+    margin: 0;
+    overflow-y: auto;
+  }
+
+  .card {
+    border-radius: 0;
+    width: 100vw;
+    max-width: none;
+    padding: 30px 20px 30px;
+    box-sizing: border-box;
+    margin: 0 auto;
+  }
+
+  .search {
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  .search input {
+    height: 45px;
+    font-size: 15px;
+  }
+
+  .search button {
+    width: 45px;
+    height: 45px;
+  }
+
+  .weatherIcon {
+    width: 180px;
+  }
+
+  .weather h1 {
+    font-size: 44px;
+  }
+
+  .weather h2 {
+    font-size: 24px;
+  }
+
+  .details {
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 0;
+  }
+
+  .col {
+    flex: 1 1 100%;
+    justify-content: center;
+  }
+
+  .col img {
+    width: 40px;
+  }
+
+  .hourly-forecast {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+    overflow-x: scroll;
+  }
+
+  .hourly-card {
+    min-width: 60px;
+    padding: 5px;
+  }
+
+  .hourly-card img {
+    width: 30px;
+  }
+}
